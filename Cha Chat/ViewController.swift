@@ -7,12 +7,31 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        logoutTEST()
+        checkCurrentUser()
+    }
+    
+    func logoutTEST() {
+        let fAuth = Auth.auth()
+        do {
+            try fAuth.signOut()
+        } catch let signOutError as NSError {
+            print("error signing out: " + signOutError.localizedDescription)
+        }
+    }
+    
+    func checkCurrentUser () {
+        if (Auth.auth().currentUser == nil) {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "authViewController")
+            self.navigationController?.present(vc!, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {

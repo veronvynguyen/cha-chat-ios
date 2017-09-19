@@ -16,6 +16,7 @@
 		393C752D1F706C0200269402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 393C752B1F706C0200269402 /* LaunchScreen.storyboard */; };
 		393C75381F706C0200269402 /* Cha_ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C75371F706C0200269402 /* Cha_ChatTests.swift */; };
 		393C75431F706C0200269402 /* Cha_ChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C75421F706C0200269402 /* Cha_ChatUITests.swift */; };
+		398FC20D1F70C1E900D4DCCA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398FC20C1F70C1E900D4DCCA /* GoogleService-Info.plist */; };
 		39C699FA1F707F3200157982 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C699F91F707F3200157982 /* AuthViewController.swift */; };
 		6A0F95EECDD66D5145301C6D /* Pods_Cha_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D608997BC4D34572099EFB3D /* Pods_Cha_Chat.framework */; };
 /* End PBXBuildFile section */
@@ -53,7 +54,7 @@
 		393C753E1F706C0200269402 /* Cha ChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cha ChatUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		393C75421F706C0200269402 /* Cha_ChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cha_ChatUITests.swift; sourceTree = "<group>"; };
 		393C75441F706C0200269402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		393C75501F706E3100269402 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		398FC20C1F70C1E900D4DCCA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39C699F91F707F3200157982 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		888D69C3D38D8E0DAA8368D2 /* Pods-Cha ChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cha ChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cha ChatTests/Pods-Cha ChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		A4F475DF940FD4C763AA5C43 /* Pods-Cha Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cha Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cha Chat/Pods-Cha Chat.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,13 +118,13 @@
 		393C75211F706C0200269402 /* Cha Chat */ = {
 			isa = PBXGroup;
 			children = (
+				398FC20C1F70C1E900D4DCCA /* GoogleService-Info.plist */,
 				393C75221F706C0200269402 /* AppDelegate.swift */,
 				393C75241F706C0200269402 /* ViewController.swift */,
 				393C75261F706C0200269402 /* Main.storyboard */,
 				393C75291F706C0200269402 /* Assets.xcassets */,
 				393C752B1F706C0200269402 /* LaunchScreen.storyboard */,
 				393C752E1F706C0200269402 /* Info.plist */,
-				393C75501F706E3100269402 /* GoogleService-Info.plist */,
 				39C699F91F707F3200157982 /* AuthViewController.swift */,
 			);
 			path = "Cha Chat";
@@ -284,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				393C752D1F706C0200269402 /* LaunchScreen.storyboard in Resources */,
+				398FC20D1F70C1E900D4DCCA /* GoogleService-Info.plist in Resources */,
 				393C752A1F706C0200269402 /* Assets.xcassets in Resources */,
 				393C75281F706C0200269402 /* Main.storyboard in Resources */,
 			);
@@ -313,11 +315,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Cha Chat/Pods-Cha Chat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);

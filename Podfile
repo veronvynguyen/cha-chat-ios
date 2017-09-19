@@ -9,6 +9,7 @@ target 'Cha Chat' do
 
     pod 'Firebase/Core'
     pod 'Firebase/Database’
+pod ‘Firebase/Auth’
 
   target 'Cha ChatTests' do
     inherit! :search_paths
