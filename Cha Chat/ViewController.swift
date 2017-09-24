@@ -12,8 +12,12 @@ import FirebaseAuth
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
-    @IBOutlet weak var messageTextfield: UITextField!
+    @IBOutlet weak var messageTextField: UITextField!
+    
     var messages: [DataSnapshot] = [DataSnapshot] ()
+    var ref: DatabaseReference!
+    var refHandle: DatabaseHandle!
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,7 +28,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         checkCurrentUser()
         tableView.delegate = self
         tableView.dataSource = self
-        messageTextfield.delegate = self
+        messageTextField.delegate = self
+        setupFirebase()
+    }
+    
+    func setupFirebase () {
+        ref = Database.database().reference()
+        refHandle = ref.child("messages").observe(DataEventType.childAdded, with: { (dataSnapShot) in
+            self.messages.append(dataSnapShot)
+            self.tableView.insertRows(at: [IndexPath(row: self.messages.count-1, section: 0)], with: .automatic)
+        })
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

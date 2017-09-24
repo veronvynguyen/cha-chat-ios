@@ -17,6 +17,7 @@
 		393C752D1F706C0200269402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 393C752B1F706C0200269402 /* LaunchScreen.storyboard */; };
 		393C75381F706C0200269402 /* Cha_ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C75371F706C0200269402 /* Cha_ChatTests.swift */; };
 		393C75431F706C0200269402 /* Cha_ChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C75421F706C0200269402 /* Cha_ChatUITests.swift */; };
+		3953D6241F783F9A00B0880E /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953D6231F783F9A00B0880E /* KeyboardLayoutConstraint.swift */; };
 		398FC20D1F70C1E900D4DCCA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398FC20C1F70C1E900D4DCCA /* GoogleService-Info.plist */; };
 		39C699FA1F707F3200157982 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C699F91F707F3200157982 /* AuthViewController.swift */; };
 		39EB3EC11F70EEAE000902E4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EB3EC01F70EEAE000902E4 /* Utilities.swift */; };
@@ -57,6 +58,7 @@
 		393C753E1F706C0200269402 /* Cha ChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cha ChatUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		393C75421F706C0200269402 /* Cha_ChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cha_ChatUITests.swift; sourceTree = "<group>"; };
 		393C75441F706C0200269402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3953D6231F783F9A00B0880E /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		398FC20C1F70C1E900D4DCCA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39C699F91F707F3200157982 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		39EB3EC01F70EEAE000902E4 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				39C699F91F707F3200157982 /* AuthViewController.swift */,
 				39EB3EC01F70EEAE000902E4 /* Utilities.swift */,
 				3917BA711F776CC9007E04C4 /* Constants.swift */,
+				3953D6231F783F9A00B0880E /* KeyboardLayoutConstraint.swift */,
 			);
 			path = "Cha Chat";
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				39C699FA1F707F3200157982 /* AuthViewController.swift in Sources */,
 				39EB3EC11F70EEAE000902E4 /* Utilities.swift in Sources */,
 				393C75231F706C0200269402 /* AppDelegate.swift in Sources */,
+				3953D6241F783F9A00B0880E /* KeyboardLayoutConstraint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
