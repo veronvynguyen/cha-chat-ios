@@ -45,7 +45,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ffU-o7-Uq3" secondAttribute="bottom" id="0mz-SD-Arf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ffU-o7-Uq3" secondAttribute="bottom" id="0mz-SD-Arf" customClass="KeyboardLayoutConstraint" customModule="Cha_Chat" customModuleProvider="target"/>
                             <constraint firstItem="ffU-o7-Uq3" firstAttribute="top" secondItem="zRX-o4-oDu" secondAttribute="bottom" constant="10" id="5HC-Mh-6Bo"/>
                             <constraint firstItem="zRX-o4-oDu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A7a-dN-NCP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zRX-o4-oDu" secondAttribute="trailing" id="Uzm-wg-7xT"/>
