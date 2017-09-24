@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
+    @IBOutlet weak var messageTextfield: UITextField!
     var messages: [DataSnapshot] = [DataSnapshot] ()
     
     @IBOutlet weak var tableView: UITableView!
@@ -23,16 +24,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         checkCurrentUser()
         tableView.delegate = self
         tableView.dataSource = self
+        messageTextfield.delegate = self
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("message writing ended")
+        self.view.endEditing(true)
+        return true
+    }
+    // mark tableview end
     func checkCurrentUser () {
         if (Auth.auth().currentUser == nil) {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "authViewController")
             self.navigationController?.present(vc!, animated: true, completion: nil)
         }
     }
-    
+    // mark tableview start
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
