@@ -40,7 +40,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         })
     }
     
+    deinit {
+        ref.child("messages").removeObserver(withHandle: refHandle)
+    }
+    
+    func sendMessage (data: [String: String]) {
+        ref.child("messages").childByAutoId().setValue(data)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField.text!.characters.count < 1) {
+            return false
+        }
+        let data = [Constants.MessageFields.text: textField.text!]
+        sendMessage(data: data)
         print("message writing ended")
         self.view.endEditing(true)
         return true
