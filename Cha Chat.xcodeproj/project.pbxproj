@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C07A1020469EFC483D29E93 /* Pods_Cha_ChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2250EF1EAA30213554168 /* Pods_Cha_ChatTests.framework */; };
 		28F624C622071C8032A185F1 /* Pods_Cha_ChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB955149DF37B1E1FBA74DA /* Pods_Cha_ChatUITests.framework */; };
+		3917BA721F776CC9007E04C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3917BA711F776CC9007E04C4 /* Constants.swift */; };
 		393C75231F706C0200269402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C75221F706C0200269402 /* AppDelegate.swift */; };
 		393C75251F706C0200269402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C75241F706C0200269402 /* ViewController.swift */; };
 		393C75281F706C0200269402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 393C75261F706C0200269402 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		2AB955149DF37B1E1FBA74DA /* Pods_Cha_ChatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cha_ChatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3404E7B0C8F8D9628167AF28 /* Pods-Cha ChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cha ChatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cha ChatUITests/Pods-Cha ChatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3917BA711F776CC9007E04C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		393C751F1F706C0200269402 /* Cha Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cha Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		393C75221F706C0200269402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		393C75241F706C0200269402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				393C752E1F706C0200269402 /* Info.plist */,
 				39C699F91F707F3200157982 /* AuthViewController.swift */,
 				39EB3EC01F70EEAE000902E4 /* Utilities.swift */,
+				3917BA711F776CC9007E04C4 /* Constants.swift */,
 			);
 			path = "Cha Chat";
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3917BA721F776CC9007E04C4 /* Constants.swift in Sources */,
 				393C75251F706C0200269402 /* ViewController.swift in Sources */,
 				39C699FA1F707F3200157982 /* AuthViewController.swift in Sources */,
 				39EB3EC11F70EEAE000902E4 /* Utilities.swift in Sources */,

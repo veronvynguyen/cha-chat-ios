@@ -7,16 +7,55 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var messages: [DataSnapshot] = [DataSnapshot] ()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        logoutTEST()
+
         checkCurrentUser()
+        tableView.delegate = self
+        tableView.dataSource = self
     }
+    
+    
+    func checkCurrentUser () {
+        if (Auth.auth().currentUser == nil) {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "authViewController")
+            self.navigationController?.present(vc!, animated: true, completion: nil)
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "messageTableViewCell")!
+        let message = messages[indexPath.row]
+        let msgContent = message.value as! Dictionary<String, String>
+        let text = msgContent[Constants.MessageFields.text] as String!
+        cell.textLabel?.text = text
+        return cell
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    
     
     func logoutTEST() {
         let fAuth = Auth.auth()
@@ -26,19 +65,5 @@ class ViewController: UIViewController {
             print("error signing out: " + signOutError.localizedDescription)
         }
     }
-    
-    func checkCurrentUser () {
-        if (Auth.auth().currentUser == nil) {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "authViewController")
-            self.navigationController?.present(vc!, animated: true, completion: nil)
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

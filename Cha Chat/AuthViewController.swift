@@ -106,6 +106,7 @@ class AuthViewController: UIViewController {
                 print("error signing in: " + err.localizedDescription)
                 return
             }
+            self.dismiss(animated: true, completion: nil)
             print ("Signed in: " + (user?.email)!)
         }
     }
