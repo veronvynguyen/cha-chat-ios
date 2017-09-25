@@ -17,8 +17,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var messages: [DataSnapshot] = [DataSnapshot] ()
     var ref: DatabaseReference!
     var refHandle: DatabaseHandle!
-    
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -45,7 +43,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func sendMessage (data: [String: String]) {
-        ref.child("messages").childByAutoId().setValue(data)
+        var packet = data
+        packet[Constants.MessageFields.dateTime] = Utilities().getDate()
+        ref.child("messages").childByAutoId().setValue(packet)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -56,8 +56,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         sendMessage(data: data)
         print("message writing ended")
         self.view.endEditing(true)
+        Utilities().clearTextField(textField: textField)
         return true
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     // mark tableview end
     func checkCurrentUser () {
         if (Auth.auth().currentUser == nil) {
@@ -65,6 +71,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.navigationController?.present(vc!, animated: true, completion: nil)
         }
     }
+    
     // mark tableview start
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -78,8 +85,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "messageTableViewCell")!
         let message = messages[indexPath.row]
         let msgContent = message.value as! Dictionary<String, String>
-        let text = msgContent[Constants.MessageFields.text] as String!
-        cell.textLabel?.text = text
+        if let text = msgContent[Constants.MessageFields.text]
+        {
+            cell.textLabel?.text = text
+        }
+        if let dateTime =  msgContent[Constants.MessageFields.dateTime]
+        {
+            cell.detailTextLabel?.text = dateTime
+        }
         return cell
     }
 
@@ -87,8 +100,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
     
     func logoutTEST() {
         let fAuth = Auth.auth()

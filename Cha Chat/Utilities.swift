@@ -16,4 +16,15 @@ class Utilities {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         vc.present(alert, animated: true, completion: nil)
     }
+    
+    func getDate () -> String {
+        let todaysDate: Date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+        return dateFormatter.string(from: todaysDate)
+    }
+    
+    func clearTextField (textField: UITextField) {
+        textField.text = ""
+    }
 }
